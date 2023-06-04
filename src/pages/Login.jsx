@@ -17,6 +17,10 @@ export const Login = (props) => {
         navigate("/users");
       })
       .catch((e) => {
+        if (e === 401) {
+          setMessage("Invalid credentials");
+          return;
+        }
         setMessage("User is blocked");
       });
   };

@@ -19,7 +19,7 @@ export const apiRequest = (config = null) => {
     (error) => {
       if (error.response && error.response.status === 423) {
       }
-      return Promise.reject(error);
+      return Promise.reject(error.response.status);
     }
   );
   return axiosInstance(config);
